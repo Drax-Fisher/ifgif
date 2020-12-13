@@ -57,6 +57,9 @@ nav div{
 	border: none;
 	border-radius: 10px;
 }
+#search_bar:focus{
+	height: 5vh;
+}
 #sign_in{
 	right: 5%;
 }
