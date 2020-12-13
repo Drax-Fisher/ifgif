@@ -38,27 +38,31 @@ nav div{
 }
 #search {
 	background-color: transparent;
-	position: relative;
+	/*position: relative;*/
 	margin-right: 5px;
 	width: 100%;
+	text-align: center;
 	height: auto;
 }
 #search_bar{
+	margin: auto;
 	font-size: 20px;
-	position: relative;
-	width: 100%;
-	height:auto;
+	/*position: relative;*/
+	width: 9.5%;
+	height: 8vh;
 	margin-left: -2px;
 	background-color: black;
-	height: 5vh;
 	color: lightgray;
 	margin-bottom: 5px;
 	margin-top: 5px;
 	border: none;
-	border-radius: 10px;
+	border-radius: 50px;
+	transition: 0.5s
 }
 #search_bar:focus{
-	height: 5vh;
+	height: 40px;
+	width: 100%;
+	border-radius: 10px;
 }
 #sign_in{
 	right: 5%;
@@ -85,5 +89,9 @@ nav div{
 	}
 	#about_us{
 		right: 25%;
+	}
+	#search_bar{
+		width: 13.5%;
+		text-align: center;
 	}
 }
