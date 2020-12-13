@@ -12,6 +12,13 @@ nav{
 	position: relative;
 	border-radius: 10px;
 }
+#logo{
+	width: 30%;
+}
+#logo img{
+	width: 100%;
+	height: auto;
+}
 nav div{
 	display: inline-block;
 	color: gray;
@@ -20,13 +27,13 @@ nav div{
 	display: none;
 }
 #sign_in, #about_us{
-	width: 75px;
-	bottom: 15px;
+	width: 10%;
+	bottom: 10%;
 	position: absolute;
 	/*border:1px solid yellow;*/
 	text-align: center;
 	border-radius: 10px;
-	height: 5vh;
+	height: auto;
 	transition: box-shadow 0.3s;
 }
 #search {
@@ -34,6 +41,7 @@ nav div{
 	position: relative;
 	margin-right: 5px;
 	width: 100%;
+	height: auto;
 }
 #search_bar{
 	font-size: 20px;
@@ -49,14 +57,29 @@ nav div{
 	border-radius: 10px;
 }
 #sign_in{
-	right: 30px;
+	right: 5%;
 }
 #about_us{
-	right: 125px;
+	right: 15%;
 }
 #sign_in p,#about_us p{
 	line-height: 4px;
 }
 #sign_in:hover, #about_us:hover{
 	box-shadow:0px 0px 20px 1px yellow;
+}
+@media only screen and (max-width: 700px) {
+
+	#logo{
+		width: 50%;
+	}
+	#sign_in, #about_us{
+		width: 20%;
+	}
+	#sign_in{
+		right: 5%;
+	}
+	#about_us{
+		right: 25%;
+	}
 }
