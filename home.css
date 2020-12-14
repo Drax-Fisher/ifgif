@@ -47,8 +47,9 @@ nav div{
 #search_bar{
 	margin: auto;
 	font-size: 20px;
+	text-overflow: all;
 	/*position: relative;*/
-	width: 9.5%;
+	width: 200px;
 	height: 8vh;
 	margin-left: -2px;
 	background-color: black;
@@ -56,6 +57,7 @@ nav div{
 	margin-bottom: 5px;
 	margin-top: 5px;
 	border: none;
+	text-align: center;
 	border-radius: 50px;
 	transition: 0.5s
 }
@@ -91,7 +93,7 @@ nav div{
 		right: 25%;
 	}
 	#search_bar{
-		width: 15.0%;
+		width: 65px;
 		text-align: center;
 	}
 }
