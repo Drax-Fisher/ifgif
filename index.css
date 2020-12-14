@@ -26,15 +26,15 @@ nav div{
 #sub{
 	display: none;
 }
-#sign_in, #about_us{
-	width: 10%;
+#sign_in, #explore, #upload{
+	width: 9.5%;
 	bottom: 10%;
 	position: absolute;
 	/*border:1px solid yellow;*/
 	text-align: center;
 	border-radius: 10px;
 	height: auto;
-	transition: box-shadow 0.3s;
+	transition: box-shadow 0.3s, transform 0.3s;
 }
 #search {
 	background-color: transparent;
@@ -47,8 +47,6 @@ nav div{
 #search_bar{
 	margin: auto;
 	font-size: 20px;
-	text-overflow: all;
-	/*position: relative;*/
 	width: 200px;
 	height: 8vh;
 	margin-left: -2px;
@@ -65,35 +63,88 @@ nav div{
 	height: 40px;
 	width: 100%;
 	border-radius: 10px;
+	background-image: url(logo.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: 100px 20px;
+
+}
+#upload{
+	right: 5%;
+	background-color: #efc600;
+}
+#upload div p{
+	color: black;
+	font-weight: bold;
+	font-family: "Lucida Console";
 }
 #sign_in{
-	right: 5%;
-}
-#about_us{
 	right: 15%;
 }
-#sign_in p,#about_us p{
+#explore{
+	right: 25%;
+}
+#sign_in p,#explore p, #upload p{
 	line-height: 4px;
 }
-#sign_in:hover, #about_us:hover{
-	box-shadow:0px 0px 20px 1px yellow;
+#sign_in:hover, #explore:hover{
+	box-shadow:2px 2px gray;
+	transform: translate(-2px,-2px);
+}
+#explore:hover{
+	background-image: url("sort-down.png");
+	background-size: 15px auto;
+	background-repeat: no-repeat;
+	background-position: 85%;
+}
+#upload:hover{
+	box-shadow:2px 2px gray;
+	transform: translate(-2px,-2px);
+	background: linear-gradient(90deg, #efc600 , black );
+	background-size: 200% 200%;
+	animation: upbutton 1s ease infinite;
+}
+@keyframes upbutton{
+	0%{background-position: 0% 84%}
+   	50%{background-position: 100% 17%}
+ 	100%{background-position: 0% 84%}
 }
 @media only screen and (max-width: 700px) {
 
 	#logo{
 		width: 50%;
 	}
-	#sign_in, #about_us{
+	#upload, #explore{
 		width: 20%;
 	}
 	#sign_in{
-		right: 5%;
+		display: none;
 	}
-	#about_us{
-		right: 25%;
+	#upload{
+		right: 5%;
+		background: linear-gradient(90deg, #efc600, white);
+		animation: sbut 1s ease infinite;
+		background-size: 200% 200%;
+	}
+	@keyframes sbut{
+		 0%{background-position:84% 0%}
+   		 50%{background-position:17% 100%}
+ 		 100%{background-position:84% 0%}
+ 	}
+	#explore{
+		right: 26%;
+		text-align: left;
+		text-indent: 8%;
 	}
 	#search_bar{
 		width: 180px;
 		text-align: center;
+	}
+	#upload:hover{
+		animation: none;
+		background-image: none;
+		background: linear-gradient(90deg, #efc600, white);
+		animation: sbut 1s ease infinite;
+		background-size: 200% 200%;
 	}
 }
