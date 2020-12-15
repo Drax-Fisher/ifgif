@@ -26,6 +26,15 @@ nav div{
 #sub{
 	display: none;
 }
+#explore img{
+	width: 15px;
+	height: auto;
+	margin-left: 2px;
+
+}
+#explore img, #explore p{
+	display: inline-block;
+}
 #sign_in, #explore, #upload{
 	width: 9.5%;
 	bottom: 10%;
@@ -63,10 +72,10 @@ nav div{
 	height: 40px;
 	width: 100%;
 	border-radius: 10px;
-/* 	background-image: url(logo.png); */
-/* 	background-position: left; */
-/* 	background-repeat: no-repeat; */
-/* 	background-size: 100px 20px; */
+	/*background-image: url(logo.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: 100px 20px;*/
 
 }
 #upload{
@@ -91,12 +100,6 @@ nav div{
 	box-shadow:2px 2px gray;
 	transform: translate(-2px,-2px);
 }
-#explore:hover{
-	background-image: url("sort-down.png");
-	background-size: 15px auto;
-	background-repeat: no-repeat;
-	background-position: 85%;
-}
 #upload:hover{
 	box-shadow:2px 2px gray;
 	transform: translate(-2px,-2px);
@@ -108,6 +111,31 @@ nav div{
 	0%{background-position: 0% 84%}
    	50%{background-position: 100% 17%}
  	100%{background-position: 0% 84%}
+}
+#content{
+	width: 100%;
+	background-color: gray;
+	margin-top: 2%;
+	border-radius: 30px;
+}
+#content div{
+	width: auto;
+	display: inline-block;
+	height: auto;
+	display: flex;
+}
+#content div div{
+	width: 22%;
+	/*margin-top: 0px;*/
+	height: auto;
+	display: inline-block;
+	margin: 1.4%;
+}
+#content div img{
+	width: 100%;
+	height: auto;
+	border: 2px solid black;
+	border-radius: 10px;
 }
 @media only screen and (max-width: 700px) {
 
