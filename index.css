@@ -95,12 +95,14 @@ nav div{
 	border: none;
 	text-align: center;
 	border-radius: 50px;
-	transition: 0.5s
+	transition: 0.5s;
+	cursor:pointer;
+	z-index: 5;
 }
 #search_bar:focus{
 	height: 40px;
-	width: 100%;
-	border-radius: 10px;
+	width: 100% !important;
+	border-radius: 10px !important;
 	outline: none;
 
 }
@@ -110,6 +112,7 @@ nav div{
 	bottom: 16%;
 	/*text-align: center;*/
 	width: 30px;
+	cursor: pointer;
 }
 #explore div{
 	width: 30px;
@@ -182,6 +185,9 @@ nav div{
 	right: 20%;
 	background-color: #efc600;
 }
+#upload a, #upload{
+	cursor: pointer;
+}
 #upload div p{
 	color: black;
 	font-weight: bold;
@@ -189,6 +195,7 @@ nav div{
 }
 #sign_in{
 	right: 10%;
+	cursor: pointer;
 }
 #sign_in p, #upload p{
 	line-height: 4px;
@@ -212,6 +219,45 @@ nav div{
 	0%{background-position: 0% 84%}
    	50%{background-position: 100% 17%}
  	100%{background-position: 0% 84%}
+}
+#catagory{
+	width: 100%;
+	height: auto;
+	background-color: black;
+	border-radius: 30px;
+	margin-top: 1%;
+	/*padding: 2%;*/
+	margin-bottom: -1%;
+	display: flex;
+	color: gray;
+	flex-direction: row;
+	align-items: center;
+	font-family: "arial";
+}
+#catagory h4{
+	margin-left: 2%;
+	margin-right: 4%;
+	width: 17%;
+	border-right: 1px solid grey;
+	cursor: default;
+	text-align: center;
+	/*padding-top: 1%;*/
+}
+#catagory > div{
+	width: 80%;
+}
+#catagory div div{
+	display: inline-block;
+	width: 16%;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	text-align: center;
+	transition: 0.3s;
+}
+#catagory div div:hover{
+	background-color: rgba(200,200,200,0.2);
+	border-radius: 10px;
 }
 #content{
 	width: 100%;
@@ -238,7 +284,7 @@ nav div{
 	position: relative;
 	/*padding-top: 1%;*/
 	background-color: #999999;
-	display: inline-block;
+	display: none;
 }
 #content div{
 	width: auto;
@@ -282,6 +328,12 @@ nav div{
 	#about a{
 		background-color: rgba(200,200,200,0.1);
 	}
+	#col6{
+		display: none !important;
+	}
+	#catagory div div{
+		width: 18%;
+	}
 }
 @media only screen and (max-width: 720px) {
 
@@ -322,8 +374,22 @@ nav div{
 	#content div{
 		flex-wrap: wrap;
 	}
-		#expage{
-		width: 50%;
+	#content div img{
+		max-width: 300px;
+	}
+	#col5, #col4{
+		display: none !important;
+	}
+	#catagory div div{
+		width: 25%;
+	}
+	#catagory h4{
+		width: 40%;
+		margin-right: 2%;
+	}
+	#expage{
+	width: 50%;
+	font-size: 1.2em;
 	}
 	#signin{
 		display: inline-block;
@@ -335,6 +401,6 @@ nav div{
 	#signin a{
 		text-decoration: none;
 		color: black;
-		font-size: 1em;
+		font-size: 1.2em;
 	}
 }
