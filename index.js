@@ -67,6 +67,7 @@ function check(e, el) {
 		if (cat.length>0) {
 			var flag = 0;
 			document.querySelector('#content div:first-child').style.display = "inline-block";
+			document.getElementById('catagory').style.display = "none";
 			var allimg = document.querySelectorAll('#content div img');
 			for (var i = 0; i < allimg.length; i++) {
 				if (flag == 1) {
