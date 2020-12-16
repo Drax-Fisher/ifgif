@@ -1,6 +1,47 @@
 body{
 	background-color: rgb(200,200,200);
 }
+#loader{
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: auto;
+	position: absolute;
+	width: 110px;
+	height: 46px;
+	border-radius: 30%;
+}
+#out{
+	display: inline-block;
+	margin-left: 25%;
+}
+#in{
+	margin: auto;
+	position: relative;
+	background-color: white;
+	border-radius: 5px;
+	border: 3px solid black;
+	width: 20px;
+	height: 0px;
+	animation: size 0.8s linear 0s infinite;
+}
+div{
+	display: block;
+
+}
+p{
+	text-align: center;
+	font-family: "arial";
+	font-weight: bolder;
+}
+@keyframes size {
+	0% {top: 0px; left: 20px; width: 0px; height: 20px; background-color: red}
+	25% { top: 20px; left: 20px; width: 20px; height: 0px; background-color: green}
+	50% {top: 20px; left: 20px; width: 0px; height: 20px; background-color: yellow}
+	75% { top: 20px; left: 0px; width: 20px; height: 0px; background-color: blue }
+	100% { top: 0px; left: 20px; width: 0px; height: 20px; background-color: red}
+}
 header{
 	background-color: grey;
 	border-radius: 30px;
@@ -23,19 +64,7 @@ nav div{
 	display: inline-block;
 	color: gray;
 }
-#sub{
-	display: none;
-}
-#explore img{
-	width: 15px;
-	height: auto;
-	margin-left: 2px;
-
-}
-#explore img, #explore p{
-	display: inline-block;
-}
-#sign_in, #explore, #upload{
+#sign_in, #upload{
 	width: 9.5%;
 	bottom: 10%;
 	position: absolute;
@@ -43,7 +72,7 @@ nav div{
 	text-align: center;
 	border-radius: 10px;
 	height: auto;
-	transition: box-shadow 0.3s, transform 0.3s;
+	transition: box-shadow 0.1s, transform 0.1s;
 }
 #search {
 	background-color: transparent;
@@ -72,14 +101,85 @@ nav div{
 	height: 40px;
 	width: 100%;
 	border-radius: 10px;
-	/*background-image: url(logo.png);
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: 100px 20px;*/
+	outline: none;
 
 }
-#upload{
+#explore{
+	position: absolute;
 	right: 5%;
+	bottom: 16%;
+	/*text-align: center;*/
+	width: 30px;
+}
+#explore div{
+	width: 30px;
+	height: 4px;
+	border-radius: 10%;
+	margin-bottom: 12%;
+	position: relative;
+	background-color: gray;
+	display: block;
+	transition: 0.5s;
+}
+#expage{
+	z-index: 10;
+	display: none;
+	position: absolute;
+	border-radius: 15px;
+	flex-direction: column;
+	width: 20%;
+	height: auto;
+	top: 100%;
+	right: 1%;
+	font-size: 1.5em;
+	border:2px solid gray;
+	background-color: black;
+}
+#about{
+	margin: 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+#about div:first-child{
+	background-color: #efc600;
+	width: 100%;
+	border-radius: 10px;
+	text-align: right;
+	color: black;
+}
+#about a{
+	display: inline-block;
+	margin-top: 10%;
+	width: 100%;
+	text-align: right;
+	text-decoration: none;
+	color: gray;
+	border-radius: 15px;
+}
+#about a:hover{
+	background-color: rgba(200,200,200,0.2);
+}
+#sm{
+	width: 100%;
+	/*border:1px solid white;*/
+
+}
+#sm a{
+	width: auto;
+	float: right;
+	margin-left: 8%;
+}
+#sm img{
+	width: 30px;
+	height: 30px;
+}
+#signin{
+	display: none;
+}
+#upload{
+	right: 20%;
 	background-color: #efc600;
 }
 #upload div p{
@@ -88,15 +188,12 @@ nav div{
 	font-family: "Lucida Console";
 }
 #sign_in{
-	right: 15%;
+	right: 10%;
 }
-#explore{
-	right: 25%;
-}
-#sign_in p,#explore p, #upload p{
+#sign_in p, #upload p{
 	line-height: 4px;
 }
-#sign_in:hover, #explore:hover{
+#sign_in:hover{
 	box-shadow:2px 2px gray;
 	transform: translate(-2px,-2px);
 }
@@ -106,6 +203,10 @@ nav div{
 	background: linear-gradient(90deg, #efc600 , black );
 	background-size: 200% 200%;
 	animation: upbutton 1s ease infinite;
+}
+#sign_in:active, #upload:active{
+	box-shadow: none;
+	transform: translate(0px,0px);
 }
 @keyframes upbutton{
 	0%{background-position: 0% 84%}
@@ -118,55 +219,83 @@ nav div{
 	margin-top: 2%;
 	border-radius: 30px;
 }
+#content p{
+	margin: 0px;
+	display: inline-block;
+	font-size: 26px;
+	font-family: "Arial";
+	position: relative;
+}
+#content div:first-child{
+	/*margin-left: 2%;*/
+	margin-top: 1%;
+	margin-bottom: 1%;
+	height: 50px;
+	width: 100%;
+	line-height: 50px;
+	border-radius: 30px;
+	text-align: center;
+	position: relative;
+	/*padding-top: 1%;*/
+	background-color: #999999;
+	display: inline-block;
+}
 #content div{
 	width: auto;
 	display: inline-block;
 	height: auto;
+	white-space: wrap;
 	display: flex;
-}
-#content div div{
-	width: 22%;
-	/*margin-top: 0px;*/
-	height: auto;
-	display: inline-block;
-	margin: 1.4%;
+	flex-wrap: wrap;
+	flex-direction: row;
+    align-items: stretch;
 }
 #content div img{
-	width: 100%;
+	width: 17%;
 	height: auto;
+	max-height: 350px;
+	display: inline-block;
+	margin: 1.3%;
 	border: 2px solid black;
 	border-radius: 10px;
 }
-@media only screen and (max-width: 700px) {
+.sexy{
+	display: none;
+}
+@media only screen and (max-width: 1080px){
+	#content div img{
+		width: 21%;
+		margin: 1.5%
+	}
+	#content div:first-child{
+		height: 40px;
+	}
+	#upload{
+		right: 26%;
+	}
+	#sign_in{
+		right: 13%;
+	}
+	#expage{
+		width: 25%;
+	}
+	#about a{
+		background-color: rgba(200,200,200,0.1);
+	}
+}
+@media only screen and (max-width: 720px) {
 
 	#logo{
 		width: 50%;
 	}
-	#upload, #explore{
-		width: 20%;
-	}
-	#sign_in{
-		display: none;
-	}
 	#upload{
-		right: 5%;
+		width: 20%;
+		box-shadow:2px 2px gray;
+		transform: translate(-2px,-2px);
+		right: 20%;
 		background: linear-gradient(90deg, #efc600, white);
 		animation: sbut 1s ease infinite;
 		background-size: 200% 200%;
-	}
-	@keyframes sbut{
-		 0%{background-position:84% 0%}
-   		 50%{background-position:17% 100%}
- 		 100%{background-position:84% 0%}
- 	}
-	#explore{
-		right: 26%;
-		text-align: left;
-		text-indent: 8%;
-	}
-	#search_bar{
-		width: 180px;
-		text-align: center;
 	}
 	#upload:hover{
 		animation: none;
@@ -175,12 +304,37 @@ nav div{
 		animation: sbut 1s ease infinite;
 		background-size: 200% 200%;
 	}
-	#content div div{
+	#sign_in{
+		display: none;
+	}
+	@keyframes sbut{
+		 0%{background-position:84% 0%}
+   		 50%{background-position:17% 100%}
+ 		 100%{background-position:84% 0%}
+ 	}
+	#search_bar{
+		width: 180px;
+		text-align: center;
+	}
+	#content div img{
 		width: 45%;
-		float: left;
 	}
 	#content div{
+		flex-wrap: wrap;
+	}
+		#expage{
+		width: 50%;
+	}
+	#signin{
 		display: inline-block;
+		width: 100%;
 		text-align: center;
+		background-color: #efc600;
+		border-radius: 15px;
+	}
+	#signin a{
+		text-decoration: none;
+		color: black;
+		font-size: 1.5em;
 	}
 }
