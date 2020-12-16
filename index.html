@@ -3,33 +3,83 @@
 <head>
 	<title>GIFs</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
 	<meta name="viewport" content="width=device-width" />
 	<link rel="icon" type="img/jpg" href="icon.jpg">
 </head>
-<body>
+<body id="body">
+	<div id="loader">
+		<div id="out">
+			<div id="in">
+			</div>
+		</div>
+		<div>
+			<p>Loading IFGIF</p>
+		</div>
+	</div>
 	<header>
 		<nav>
 			<div id="logo"><a href="index.html"><img src="logo.png"></a></div>
-			<div id="explore"><a href="#explore"><div> <p>Explore</p></div></a></div>
+			<div id="explore" class="close" onclick="menu(this)"><div id="up"></div><div id="mid"></div><div id="down"></div></div>
+			<div id="expage">
+				<div id="signin">
+					<b><a href="#body">
+						<b>Sign in</b>
+					</a></b>
+				</div>
+				<div id="about">
+					<div><b>About</b></div>
+					<a href="#body">FAQ</a>
+					<a href="#body">Terms</a>
+					<a href="#body">Privacy</a>
+					<a href="#body">About us</a>
+					<div id="sm">
+						<a href="#body"><img src="facebook.webp"></a>
+						<a href="#body"><img src="instagram.png"></a>
+						<a href="#body"><img src="twitter.png"></a>
+					</div>
+				</div>
+			</div>
 			<div id="sign_in"><p>SIGN IN</p></div>
-			<div id="upload"><a href="#upload"><div><p>Upload</p></div></a></div>
+			<div id="upload"><a href="#logo"><div><p>Upload</p></div></a></div>
 		</nav>
 		<div>
 			<div id="search" >
-				<form action="index.html">
-					<input id="search_bar" type="text" name="search" placeholder="Search for GIFs" autocomplete="off">
-					<input id="sub" type="submit" name="submit">
-				</form>
+					<input id="search_bar" type="text" name="search" onkeypress="check(event, this)" placeholder="Search for GIFs" autocomplete="off">
 			</div>
 		</div>
 	</header>
+	<div id="catagory">
+		
+	</div>
 	<div id="content">
 		<div>
-			<div id="col1"><img src="content/bolly1.gif"><img src="content/dance1.gif"><img src="content/food2.gif"></div>
-			<div id="col3"><img src="content/dance3.gif"><img src="content/bolly5.gif"><img src="content/dance4.gif"></div>
-			<div id="col2"><img src="content/food1.gif"><img src="content/bolly2.gif"><img src="content/bolly3.gif"></div>
-			<div id="col4"><img src="content/dance2.gif"><img src="content/dance3.gif"><img src="content/bolly4.gif"></div>
+			<p>
+			</p>
 		</div>
+		<div>
+			<img class="bollywood" src="content/bolly1.gif">
+			<img class="dance punjab" src="content/dance1.gif">
+			<img class="food" src="content/food2.gif">
+			<img class="food" src="content/food3.gif">
+			<img class="bollywood" src="content/bolly5.gif">
+			<img class="dance" src="content/dance4.gif">
+			<img class="food" src="content/food1.gif">
+			<img class="bollywood" src="content/bolly2.gif">
+			<img class="bollywood" src="content/bolly3.gif">
+			<img class="dance" src="content/dance2.gif">
+			<img class="dance" src="content/dance3.gif">
+			<img class="bollywood" src="content/bolly4.gif">
+			<img class="sexy" style="display: none;" src="hot/hot1.gif">
+			<img class="sexy" style="display: none;" src="hot/hot2.gif">
+			<img class="sexy" style="display: none;" src="hot/hot3.gif">
+			<img class="sexy" style="display: none;" src="hot/hot4.gif">
+			<img class="sexy" style="display: none;" src="hot/hot5.gif">
+			<img class="sexy" style="display: none;" src="hot/hot6.gif">
+			<img class="sexy" style="display: none;" src="hot/hot7.gif">
+			<img class="sexy" style="display: none;" src="hot/hot8.gif">
+			<img class="sexy" style="display: none;" src="hot/hot9.gif">
+			<img class="sexy" style="display: none;" src="hot/hot10.gif">
 		
 	</div>
 </body>
