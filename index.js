@@ -13,6 +13,7 @@ function scrollFunction() {
 	var navh = document.getElementsByTagName('nav')[0].offsetHeight;
   	if (document.body.scrollTop > Number(navh)+20 || document.documentElement.scrollTop > Number(navh)+20) {
  		var ssb = document.getElementById('search_bar');
+ 		document.getElementsByTagName('header')[0].style.height = (navh+52).toString()+"px";
  		ssb.style.width = "100%";
  		ssb.style.position = "fixed";
  		ssb.style.top = "0px";   
@@ -20,6 +21,7 @@ function scrollFunction() {
  		ssb.style.right = "0px";
  		ssb.style.margin = "auto";	
   	} else {
+		document.getElementsByTagName('header')[0].style.height = "auto";
   		var ssb = document.getElementById('search_bar');
  		ssb.style.width = "200px";
  		ssb.style.position = "relative";
@@ -30,30 +32,36 @@ function scrollFunction() {
 }
 function menu(el){
 	if (el.className=="close") {
-		el.style.bottom = "30%";
+		// el.style.bottom = "30%";
+		el.style.transform = "rotate(360deg)";
 		var up = document.getElementById('up');
-		up.style.transform = "rotateZ(40deg)";
-		up.style.marginBottom = "-18%";
+		up.style.transform = "rotateZ(45deg)";
+		up.style.marginTop = "36%";
 		var mid = document.getElementById('mid');
 		mid.style.opacity = "0";
 		var down = document.getElementById('down');
-		down.style.transform = "rotateZ(-40deg)";
-		down.style.marginTop = "-19%";
+		down.style.transform = "rotateZ(-45deg)";
+		down.style.marginTop = "-36%";
 		el.className = "open";
-		document.getElementById('expage').style.display = "flex";
+		document.getElementById('expage').style.transition = "opacity 0.5s";
+		document.getElementById('expage').style.opacity = "1";
+		document.getElementById('expage').style.zIndex = "10";
 	}
 	else{
-		el.style.bottom = "16%";
+		// el.style.bottom = "16%";
+		el.style.transform = "rotate(0deg)";
 		var up = document.getElementById('up');
 		up.style.transform = "rotateZ(0deg)";
-		up.style.marginBottom = "12%";
+		up.style.marginTop = "12%";
 		var mid = document.getElementById('mid');
 		mid.style.opacity = "1";
 		var down = document.getElementById('down');
 		down.style.transform = "rotateZ(0deg)";
 		down.style.marginTop = "12%";
 		el.className = "close";	
-		document.getElementById('expage').style.display = "none";	
+		document.getElementById('expage').style.transition = "opacity 0.5s, z-index 0s 0.5s";
+		document.getElementById('expage').style.opacity = "0";	
+		document.getElementById('expage').style.zIndex = "-10";
 	}
 
 }
@@ -64,6 +72,7 @@ function check(e, el) {
 		var inp = document.getElementById('search_bar');
 		var cat = inp.value.toLowerCase();
 		inp.value = "";
+		cat = cat.trim();
 		if (cat.length>0) {
 			var flag = 0;
 			document.querySelector('#content div:first-child').style.display = "inline-block";
